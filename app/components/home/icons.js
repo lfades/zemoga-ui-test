@@ -1,0 +1,87 @@
+export const Search = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="26"
+    viewBox="0 0 24 26"
+  >
+    <path
+      fill="#fff"
+      fillRule="evenodd"
+      d="M1140.26,42.592c4.4,0,8.68,2.879,8.68,8.625s-4.28,8.625-8.68,8.625-8.68-2.879-8.68-8.625S1135.86,42.592,1140.26,42.592Zm0-1.592c-5.07,0-10.26,3.4-10.26,10.217s5.19,10.216,10.26,10.216a10.983,10.983,0,0,0,5.49-1.443l6.67,7.01,1.58-1.591-6.44-6.768a9.928,9.928,0,0,0,2.96-7.424C1150.52,44.4,1145.33,41,1140.26,41Z"
+      transform="translate(-1130 -41)"
+    />
+  </svg>
+);
+
+export const ThumpUp = ({ ...props }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="36px"
+    height="37px"
+    viewBox="0 0 36 37"
+    {...props}
+  >
+    <path
+      fillRule="evenodd"
+      fill="rgb(255, 255, 255)"
+      d="M33.444,20.551 C33.444,20.551 35.080,21.191 35.080,23.137 C35.080,25.107 33.377,25.996 32.256,25.996 C32.954,26.343 33.928,27.010 33.714,28.696 C33.499,30.381 32.298,30.994 31.112,31.358 C31.879,31.831 32.437,33.141 32.010,34.149 C31.436,35.505 29.921,37.000 26.518,37.000 C22.401,37.000 11.077,37.000 10.625,37.000 C9.421,37.000 8.525,36.450 8.338,35.772 C8.338,34.381 8.338,17.197 8.338,17.197 C8.338,17.197 8.338,16.600 8.428,16.444 C12.667,10.199 14.171,8.419 13.920,4.804 C13.670,1.190 14.387,0.195 16.095,0.017 C17.802,-0.161 21.010,0.771 21.573,6.688 C21.816,9.248 19.989,14.289 19.989,14.289 C19.989,14.289 31.641,14.296 32.773,14.296 C34.583,14.296 36.001,15.071 36.001,17.541 C36.001,19.855 33.444,20.551 33.444,20.551 ZM1.000,37.000 L-0.000,37.000 L-0.000,15.250 L1.000,15.250 L6.219,15.250 L7.219,15.250 L7.219,37.000 L6.219,37.000 L1.000,37.000 Z"
+    />
+  </svg>
+);
+
+export const ThumpDown = ({ ...props }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="36px"
+    height="37px"
+    viewBox="0 0 36 37"
+    {...props}
+  >
+    <path
+      fillRule="evenodd"
+      fill="rgb(255, 255, 255)"
+      d="M35.000,21.781 L29.781,21.781 L28.781,21.781 L28.781,0.000 L29.781,0.000 L35.000,0.000 L36.000,0.000 L36.000,21.781 L35.000,21.781 ZM22.080,32.223 C22.330,35.840 21.613,36.836 19.905,37.014 C18.198,37.192 14.990,36.259 14.427,30.338 C14.184,27.776 16.011,22.731 16.011,22.731 C16.011,22.731 4.359,22.723 3.227,22.723 C1.417,22.723 -0.001,21.948 -0.001,19.476 C-0.001,17.159 2.556,16.463 2.556,16.463 C2.556,16.463 0.920,15.822 0.920,13.875 C0.920,11.902 2.623,11.013 3.744,11.013 C3.046,10.666 2.072,9.998 2.286,8.311 C2.501,6.625 3.702,6.011 4.888,5.647 C4.121,5.173 3.563,3.862 3.990,2.854 C4.564,1.496 6.079,-0.000 9.482,-0.000 C13.599,-0.000 24.923,-0.000 25.375,-0.000 C26.580,-0.000 27.475,0.551 27.662,1.229 C27.662,2.621 27.662,19.820 27.662,19.820 C27.662,19.820 27.662,20.417 27.572,20.573 C23.333,26.824 21.829,28.605 22.080,32.223 Z"
+    />
+  </svg>
+);
+
+export const Close = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px">
+    <path
+      fillRule="evenodd"
+      fill="rgb(51, 51, 51)"
+      d="M15.010,14.487 L14.318,15.176 L7.828,8.706 L0.696,15.815 L-0.010,15.111 L7.122,8.003 L0.632,1.534 L1.323,0.845 L7.813,7.314 L13.968,1.179 L14.674,1.883 L8.519,8.017 L15.010,14.487 Z"
+    />
+  </svg>
+);
+
+export const Twitter = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="30"
+    height="25"
+    viewBox="0 0 30 25"
+  >
+    <image
+      width="30"
+      height="25"
+      xlinkHref="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAZCAYAAAAmNZ4aAAACM0lEQVRIibWWTYiNURjHf8NlM/KVZEcm6Sah+26YlI1hhUKWrOyRUmMvyYrNyIJZaJRC1A1FpmaaxT9iNMnHhqTJjWYxvsLoqefU23vfe+975t77r9Pbec5zzu+c5z3nPKenUqnQjiSRJMlq4BSwF1gL/ASeAcOSRtLDJ0kyALwK4O3AZuDKPOawC7gDLGvQfhM4C2wCBoEVwJYF3ngEGAL2R0LXA0+aQMPYb31yiaQNFpGw4rvAPnc8BlwvCB4Fdhb0rQFngD5gpuTG5SmHaxYK4GSLgfoioKbFwFVgFiiHUE9nnE4AU8CBJgP1R0BNS4FxW6SkjwF8P8exDNwGxjz8qzLttUhwTVK/pD9WCaEeBs4Da3I67PAy65OQHQffWHNAT0Hwr3Sl5GWhb/dR/+apFxjwMh/VgU1V4DkwCWxM2Tup6SzYYv4ttYvnugA1vU5Xwua6kLIV/WexGs8DTwC3ugQMquaBTYeBh12CTkj61Ahs2uN361iH//XFrCELNuhu33CdAn+WVPcbs8fGrsmRrFObOp7XPbviyVSW6oSqkvKu4zqw6Z6/JN60Cf4KHGzUmAc2PfAbzBLFJeBvJPSfpUxJP2LBQUsc3sovre/2lJI01cyp5M+WmZSt7IngKLAtAmh6YeGV9L6Vo4G3Aqc99fX6SyFWdvTOSRos2s/ATz0tWogORQK/ADeAy5LexXQM5/ixl0V+gdiT1SKxDljp9t+exT4ALz13P5JkD4Q4Af8BCYKKvga0yYUAAAAASUVORK5CYII="
+    />
+  </svg>
+);
+
+export const Facebook = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="25"
+    height="25"
+    viewBox="0 0 25 25"
+  >
+    <image
+      width="25"
+      height="25"
+      xlinkHref="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAABVklEQVRIie2WPS8FQRSGn/vhOyh8NUoNUUj2iP9BqRIJv0CtVomCSnQ6Bb9AdIptaFUSjUIkLlez95KTzE1mxzV2Z3c7p3vnnJln9pw5J1uLougA2AEalG9d4FwhXxUcnrI60K6Y0W4CnYKHfAAPwCcwAIwAC8CQ8XeaBQH7wHEcxy/2oojcAms9XQSyDZzFcdzPl8pOPRBwpwCPP7FF6Jdc2kJE5oE9YMo826UyIE+OPgLWfwsOTZdrMz5nKGTa0bO+4Kzp0qlwCryb8XPj+A9NHfRVDQK79tk6Vt6A8T8giWm0H9bvCYtIYs3CVtZ01YC5LIEisuoO2zw1ec4YN+kuZK2JXubCDNOGqc91zyki2iMrpibLoRBN14al720IsAUs+m4YYq/OnkffGWU1o9f+IbkhVfylpBgKGQ3YOOzoCU/smPbJCbCZM3UtR+s0cNfUusDVN1EQPA5q3eVhAAAAAElFTkSuQmCC"
+    />
+  </svg>
+);
