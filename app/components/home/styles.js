@@ -49,6 +49,7 @@ export const StyledHeader = styled.header`
 
   nav {
     display: flex;
+    align-items: center;
   }
   a {
     text-decoration: none;
@@ -67,13 +68,16 @@ export const StyledHeader = styled.header`
 `;
 
 export const StyledHeaderCard = styled.div`
-  grid-column: center-start / col-end 3;
+  grid-column: center-start / center-end;
+  justify-self: start;
   margin-top: 10rem;
 `;
 
 export const HeaderCardContent = styled.div`
-  padding: 3rem;
+  display: grid;
+  grid-template-columns: minmax(20rem, 50rem);
   background: #000000bf;
+  padding: 3rem;
 
   p {
     color: #fff;
