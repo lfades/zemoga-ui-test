@@ -53,3 +53,6 @@ typings/
 
 # dotenv environment variables file
 .env
+
+# Secret keys
+api/now-secrets.json

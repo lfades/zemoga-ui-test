@@ -1,0 +1,22 @@
+scalar Date
+
+type Person {
+  id: ID!
+  name: String!
+  description: String!
+  photoUrl: String!
+  votesUp: Int!
+  votesDown: Int!
+  createdAt: Date!
+  updatedAt: Date!
+  tags: [String!]!
+}
+
+type Query {
+  persons: [Person!]!
+  person(id: ID!): Person
+}
+
+type Mutation {
+  vote(personId: ID!, up: Boolean!): Person
+}

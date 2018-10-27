@@ -1,0 +1,17 @@
+{
+  "name": "zemoga-ui-api",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "nodemon src/app.js -w src -e js,graphql"
+  },
+  "dependencies": {
+    "apollo-server": "^2.1.0",
+    "graphql": "^14.0.2",
+    "graphql-import": "^0.7.1",
+    "mongoose": "^5.3.7",
+    "now-env": "^3.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.5"
+  }
+}
