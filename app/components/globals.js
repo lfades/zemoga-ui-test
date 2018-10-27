@@ -35,8 +35,12 @@ export const MainGrid = css`
   ${MainGridColumns('1fr')};
 `;
 
+/**
+ * To avoid issues z-index, all are defined here
+ */
 export const zIndex = new function zIndex() {
   this.base = 1;
+  this.background = this.base - 1;
 }();
 
 export const H1 = styled.h1`

@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import { MainGrid, H3, H4, H5 } from '../globals';
+import { MainGrid, zIndex, H3, H4, H5 } from '../globals';
 import theme from '../../lib/theme';
 
 export const BaseStyle = createGlobalStyle`
@@ -202,16 +202,21 @@ export const StyledCards = styled.div`
 export const Card = styled.div`
   position: relative;
   display: grid;
-  align-content: end;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) 70%);
 
   img {
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
+    z-index: ${zIndex.background};
   }
+`;
+
+export const CardBody = styled.div`
+  display: grid;
+  align-content: end;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) 70%);
+  z-index: ${zIndex.base};
 `;
 
 export const CardContent = styled.div`
@@ -303,7 +308,7 @@ export const VoteUp = styled.div`
   align-items: center;
   font-size: 3rem;
   padding: 3px 7px 10px;
-  z-index: 1;
+  z-index: ${zIndex.base};
 
   span {
     margin-left: 0.7rem;
@@ -317,7 +322,7 @@ export const VoteDown = styled.div`
 
   font-size: 3rem;
   padding: 3px 7px 10px;
-  z-index: 1;
+  z-index: ${zIndex.base};
 
   span {
     margin-right: 0.7rem;
