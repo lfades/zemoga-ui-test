@@ -4,9 +4,10 @@ import styled, { css } from 'styled-components';
  * Media queries for all the required breakpoints
  */
 export const media = Object.entries({
-  largest: 1300,
-  large: 1110,
-  medium: 1000
+  medium: 870,
+  small: 790,
+  smaller: 600,
+  smallest: 500
 }).reduce(
   (result, [label, size]) =>
     Object.assign(result, {
@@ -33,6 +34,15 @@ export const MainGridColumns = sideSize => css`
 export const MainGrid = css`
   display: grid;
   ${MainGridColumns('1fr')};
+  ${media.medium`
+    ${MainGridColumns('5rem')}
+  `};
+  ${media.small`
+    ${MainGridColumns('3rem')}
+  `};
+  ${media.smaller`
+    ${MainGridColumns('2rem')}
+  `};
 `;
 
 /**

@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import { MainGrid, zIndex, H3, H4, H5 } from '../globals';
+import { media, zIndex, MainGrid, H3, H4, H5 } from '../globals';
 import theme from '../../lib/theme';
 
 export const BaseStyle = createGlobalStyle`
@@ -15,6 +15,8 @@ export const BaseStyle = createGlobalStyle`
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    ${media.medium`font-size: 56.25%;`} /* 9px; */
   }
   body {
     font-family: ${theme.font.primary};
@@ -48,22 +50,31 @@ export const StyledHeader = styled.header`
   grid-column: center-start / center-end;
 
   nav {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: column;
+    grid-gap: 4rem;
     align-items: center;
+
+    ${media.small`
+      grid-template-columns: repeat(4, max-content);
+      grid-template-rows: 1fr 1fr;
+      grid-gap: 3rem;
+
+      .logo {
+        grid-column: 1 / -1;
+      }
+    `};
+    ${media.smallest`grid-gap: 2rem;`};
   }
   a {
     text-decoration: none;
     color: #fff;
     font-size: 1.7rem;
-    margin-left: 4rem;
-  }
-  .logo {
-    flex: 1;
   }
   .logo a {
     font-size: 3rem;
     font-weight: 400;
-    margin: 0;
   }
 `;
 
@@ -187,6 +198,15 @@ export const StyledMessage = styled.div`
   svg {
     cursor: pointer;
   }
+
+  ${media.small`
+    grid-template-columns: 1fr min-content;
+
+    svg {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  `};
 `;
 
 export const VotesTitle = styled(H3)`
@@ -197,9 +217,10 @@ export const VotesTitle = styled(H3)`
 
 export const StyledCards = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr));
   grid-auto-rows: 55rem;
   grid-gap: 3rem;
+  align-content: center;
   margin-top: 4rem;
 `;
 
@@ -353,7 +374,20 @@ export const StyledSubmitName = styled.div`
     cursor: pointer;
     border: 3px solid #000;
     padding: 1rem 3rem;
+    margin-left: 3rem;
   }
+
+  ${media.smallest`
+    flex-direction: column;
+
+    ${H4} {
+      text-align: center;
+    }
+    button {
+      margin-top: 2.5rem;
+      margin-left: 0;
+    }
+  `};
 `;
 
 export const StyledFooter = styled.footer`
@@ -385,6 +419,8 @@ export const FooterLink = styled.div`
     color: #000;
     font-size: 1.2rem;
     text-decoration: none;
+
+    ${media.medium`font-size: 1.5rem;`};
   }
   :nth-child(1) {
     margin-left: 0;
