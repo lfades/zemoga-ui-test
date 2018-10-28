@@ -13,7 +13,7 @@ module.exports = withGraphql({
     // in the client
     config.plugins.push(
       new webpack.DefinePlugin({
-        'process.APP_URL': JSON.stringify(process.env.API_URL)
+        'process.API_URL': JSON.stringify(process.env.API_URL)
       })
     );
     return config;

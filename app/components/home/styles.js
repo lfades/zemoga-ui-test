@@ -224,7 +224,7 @@ export const StyledCards = styled.div`
   margin-top: 4rem;
 `;
 
-export const Card = styled.div`
+export const StyledCard = styled.div`
   position: relative;
   display: grid;
 
@@ -236,6 +236,8 @@ export const Card = styled.div`
     z-index: ${zIndex.background};
   }
 `;
+
+export const Card = StyledCard;
 
 export const CardBody = styled.div`
   display: grid;
@@ -308,21 +310,22 @@ export const CardVotes = styled.div`
   display: flex;
   margin-top: 4rem;
 
-  ::before {
-    content: '';
-    position: absolute;
-    background: ${theme.color.primary}cc;
-    left: 0;
-    width: ${props => props.widthUp || 0}%;
-    height: 100%;
-  }
+  ::before,
   ::after {
     content: '';
     position: absolute;
+    height: 100%;
+    transition: all 0.3s;
+  }
+  ::before {
+    background: ${theme.color.primary}cc;
+    left: 0;
+    width: ${props => props.widthUp || 0}%;
+  }
+  ::after {
     background: ${theme.color.secondary}cc;
     right: 0;
     width: ${props => props.widthDown || 0}%;
-    height: 100%;
   }
 `;
 
@@ -330,8 +333,8 @@ export const VoteUp = styled.div`
   flex: 1;
   display: flex;
   color: #fff;
-  align-items: center;
   font-size: 3rem;
+  align-items: center;
   padding: 3px 7px 10px;
   z-index: ${zIndex.base};
 

@@ -3,7 +3,7 @@ const Person = require('./mongo/Person.js');
  * This data source is in charge of handling every operation over Person,
  * and it should only be used by GraphQL resolvers
  */
-class Persons {
+class People {
   constructor() {
     this.model = Person;
   }
@@ -32,5 +32,5 @@ class Persons {
 }
 
 module.exports = () => ({
-  persons: new Persons()
+  people: new People()
 });

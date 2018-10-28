@@ -13,7 +13,7 @@ type Person {
 }
 
 type Query {
-  persons: [Person!]!
+  people: [Person!]!
   person(id: ID!): Person
 }
 

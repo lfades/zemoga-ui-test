@@ -5,16 +5,16 @@ const { DateType } = require('./scalars');
  */
 module.exports = {
   Query: {
-    persons(root, args, { dataSources }) {
-      return dataSources.persons.find();
+    people(root, args, { dataSources }) {
+      return dataSources.people.find();
     },
     person(root, { id }, { dataSources }) {
-      return dataSources.persons.getById(id);
+      return dataSources.people.getById(id);
     }
   },
   Mutation: {
     vote(root, { personId, up }, { dataSources }) {
-      return dataSources.persons.voteById({ id: personId, up });
+      return dataSources.people.voteById({ id: personId, up });
     }
   },
   Date: DateType

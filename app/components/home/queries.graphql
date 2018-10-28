@@ -1,0 +1,16 @@
+fragment PersonDetails on Person {
+  id
+  name
+  description
+  photoUrl
+  tags
+  votesUp
+  votesDown
+  createdAt
+}
+
+query People {
+  people {
+    ...PersonDetails
+  }
+}
