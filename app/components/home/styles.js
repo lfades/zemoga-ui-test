@@ -298,6 +298,13 @@ export const CardContent = styled.div`
       cursor: pointer;
       border: 1px solid #fff;
       padding: 1rem 1.5rem;
+      transition: all 0.2s;
+
+      :disabled {
+        color: #ffffff99;
+        border-color: #ffffff99;
+        cursor: auto;
+      }
     }
     .active {
       border: 2px solid #fff;

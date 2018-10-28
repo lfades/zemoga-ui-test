@@ -14,3 +14,12 @@ query People {
     ...PersonDetails
   }
 }
+
+mutation SendVote($personId: ID!, $up: Boolean!) {
+  vote(personId: $personId, up: $up) {
+    id
+    # Bring back only the fields that may change
+    votesUp
+    votesDown
+  }
+}
