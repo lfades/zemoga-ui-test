@@ -10,16 +10,16 @@ export default () => (
           <a>Rule of Thumb.</a>
         </Link>
       </div>
-      <Link href="/">
+      <Link href="/nowhere">
         <a>Past Trials</a>
       </Link>
-      <Link href="/">
+      <Link href="/nowhere">
         <a>How it Works</a>
       </Link>
-      <Link href="/">
+      <Link href="/nowhere">
         <a>Log In / Sign Up</a>
       </Link>
-      <Link href="/">
+      <Link href="/nowhere">
         <a>
           <Search />
         </a>
