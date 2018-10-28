@@ -15,6 +15,15 @@ module.exports = {
   Mutation: {
     vote(root, { personId, up }, { dataSources }) {
       return dataSources.people.voteById({ id: personId, up });
+    },
+    createPerson(root, { data }, { dataSources }) {
+      return dataSources.people.create(data);
+    },
+    updatePerson(root, { data }, { dataSources }) {
+      return dataSources.people.updateById(data);
+    },
+    removePerson(root, { id }, { dataSources }) {
+      return dataSources.people.removeById(id);
     }
   },
   Date: DateType

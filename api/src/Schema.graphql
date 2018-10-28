@@ -1,5 +1,20 @@
 scalar Date
 
+input UpdatePersonInput {
+  id: ID!
+  name: String
+  description: String
+  photoUrl: String
+  tags: [String!]
+}
+
+input CreatePersonInput {
+  name: String!
+  description: String!
+  photoUrl: String!
+  tags: [String!]!
+}
+
 type Person {
   id: ID!
   name: String!
@@ -19,4 +34,7 @@ type Query {
 
 type Mutation {
   vote(personId: ID!, up: Boolean!): Person
+  createPerson(data: CreatePersonInput!): Person
+  updatePerson(data: UpdatePersonInput!): Person
+  removePerson(id: ID!): Person
 }
