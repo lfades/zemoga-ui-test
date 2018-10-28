@@ -1,6 +1,6 @@
 # zemoga-ui-test
 
-UI test project presented to Zemoga, you can see it running [here](https://zemoga-ui-app-dtqgzzsbnp.now.sh/).
+UI test project presented to Zemoga, you can see it running [here](https://zemoga-ui-app-dtqgzzsbnp.now.sh/). The GraphQL API is running [here](https://zemoga-ui-api-jvhehxtzkm.now.sh/).
 
 ## 💼 What's included
 
@@ -89,3 +89,16 @@ cd /app && now
 ```
 
 That's it!. 🎉
+
+## CRUD Operations
+
+The API includes multiple operations that are not being used by the app but that can be used anyway to perform updates over the database, you can use the magical GraphQL Playground that is available once you go to the [API url](https://zemoga-ui-api-jvhehxtzkm.now.sh/) in your browser.
+
+If you know how to use Graphql then you are ready to start doing anything you want, if you don't I'm going to share some images showing the power of the playground, it also has a Share functionality included but it's currently having some issues so I'm just going to use images.
+
+- [Query for people](/playground/people.png)
+- [Query for one person](/playground/person.png)
+- [Send a vote](/playground/vote.png)
+- [Create a person](/playground/createPerson.png)
+- [Update a person](/playground/updatePerson.png)
+- [Remove a person](/playground/removePerson.png)
