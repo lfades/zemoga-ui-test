@@ -22,7 +22,7 @@ function getPercent(a, b) {
 
   if (!total || !a) return 0;
 
-  return Math.round((a / total) * 100);
+  return Number(((a / total) * 100).toFixed(1));
 }
 
 export default class Card extends React.Component {
@@ -31,7 +31,8 @@ export default class Card extends React.Component {
   };
 
   state = {
-    thumb: null
+    thumb: null,
+    hasVoted: false
   };
 
   handleThumb = thumb => () => {
@@ -43,21 +44,37 @@ export default class Card extends React.Component {
 
     const { person } = this.props;
     const { thumb } = this.state;
+    const up = thumb === 'up';
 
     sendVote({
-      variables: { personId: person.id, up: thumb === 'up' }
+      variables: { personId: person.id, up },
+      // Update the cache locally before receiving the server's response
+      // to make it feel blazing fast
+      optimisticResponse: {
+        __typename: 'Mutation',
+        vote: {
+          __typename: 'Person',
+          id: person.id,
+          votesUp: person.votesUp + (up ? 1 : 0),
+          votesDown: person.votesDown + (up ? 0 : 1)
+        }
+      }
     })
       .then(() => {
-        console.log('Vote sent!');
+        this.setState({ hasVoted: true });
       })
       .catch(() => {
         console.log('Oh no!, something went wrong.');
       });
   };
 
+  handleNewVote = () => {
+    this.setState({ hasVoted: false });
+  };
+
   render() {
     const { person } = this.props;
-    const { thumb } = this.state;
+    const { thumb, hasVoted } = this.state;
     const widthUp = getPercent(person.votesUp, person.votesDown);
     const widthDown = getPercent(person.votesDown, person.votesUp);
 
@@ -78,34 +95,43 @@ export default class Card extends React.Component {
               <span>{moment(person.createdAt).fromNow()}</span> in{' '}
               {person.tags.join(', ')}
             </p>
-            <p className="description">{person.description}</p>
+            <p className="description">
+              {hasVoted ? 'Thank you for voting!' : person.description}
+            </p>
 
             <div className="actions">
-              <div
-                className={`thumb-up${thumb === 'up' ? ' active' : ''}`}
-                onClick={this.handleThumb('up')}
-              >
-                <ThumpUp width="18px" height="18px" />
-              </div>
-              <div
-                className={`thumb-down${thumb === 'down' ? ' active' : ''}`}
-                onClick={this.handleThumb('down')}
-              >
-                <ThumpDown width="18px" height="18px" />
-              </div>
-
-              <Mutation mutation={SendVote}>
-                {(sendVote, { loading, error }) => (
-                  <button
-                    type="button"
-                    onClick={this.handleVote(sendVote)}
-                    disabled={!thumb}
+              {hasVoted ? (
+                <button type="button" onClick={this.handleNewVote}>
+                  Vote again
+                </button>
+              ) : (
+                <>
+                  <div
+                    className={`thumb-up${thumb === 'up' ? ' active' : ''}`}
+                    onClick={this.handleThumb('up')}
                   >
-                    {error && 'Error.'}
-                    {loading && !error ? 'Sending vote...' : 'Vote now'}
-                  </button>
-                )}
-              </Mutation>
+                    <ThumpUp width="18px" height="18px" />
+                  </div>
+                  <div
+                    className={`thumb-down${thumb === 'down' ? ' active' : ''}`}
+                    onClick={this.handleThumb('down')}
+                  >
+                    <ThumpDown width="18px" height="18px" />
+                  </div>
+
+                  <Mutation mutation={SendVote}>
+                    {(sendVote, { loading, error }) => (
+                      <button
+                        type="button"
+                        onClick={this.handleVote(sendVote)}
+                        disabled={!thumb || loading}
+                      >
+                        {error ? 'Error.' : 'Vote now'}
+                      </button>
+                    )}
+                  </Mutation>
+                </>
+              )}
             </div>
           </CardContent>
 
