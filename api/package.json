@@ -2,6 +2,7 @@
   "name": "zemoga-ui-api",
   "version": "1.0.0",
   "scripts": {
+    "start": "node src/app.js",
     "dev": "nodemon src/app.js -w src -e js,graphql"
   },
   "dependencies": {
